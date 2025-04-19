@@ -1,0 +1,16 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int currPointer=0;
+        int diffValuePointer=1;
+        while(diffValuePointer < nums.length){
+          if(nums[currPointer] != nums[diffValuePointer]){
+            currPointer++;
+            nums[currPointer] = nums[diffValuePointer];
+            diffValuePointer++;
+          } else{
+            diffValuePointer++;
+          } 
+        }
+        return currPointer+1;
+    }
+}
